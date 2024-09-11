@@ -1,0 +1,25 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import MenuContainer from "~/components/MenuContainer.astro";
+import TableOfContents from "~/components/TableOfContents.astro";
+---
+
+<Layout
+  title="Menu | Casa Real Mexican Restaurant"
+  description="Explore a diverse menu of authentic Mexican dishes, meticulously crafted with locally sourced, fresh ingredients. Discover the perfect blend of tradition and local flair, elevating your dining experience with every bite"
+>
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl text-center pt-10 font-bold tracking-tight md:text-4xl">
+      Menu
+    </h1>
+    <p class="max-w-prose text-lg text-center pt-6 mx-auto text-stone-600">
+      Explore a diverse menu of authentic Mexican dishes, meticulously crafted
+      with locally sourced, fresh ingredients.
+    </p>
+    <section class="flex md:gap-6 lg:gap-12 sticky top-1 pt-12">
+      <TableOfContents />
+      <MenuContainer />
+    </section>
+  </div>
+</Layout>
+<script src="../scripts/TableOfContents.ts"></script>

@@ -1,0 +1,44 @@
+---
+import { navLinks } from "~/constants";
+---
+
+<header
+  class="w-full z-10 text-white"
+  class:list={{
+    "fixed top-0 sticky-animation": Astro.url.pathname === "/",
+    "relative bg-stone-900": Astro.url.pathname !== "/",
+  }}
+>
+  <div class="flex items-center justify-end p-4 max-w-6xl mx-auto">
+    <nav class="flex gap-2 sm:gap-4 items-center flex-wrap">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="font-semibold hover:underline underline-offset-4 px-4 py-1 rounded-md"
+          >
+            {link.name}
+          </a>
+        ))
+      }
+      <a
+        class="font-semibold px-4 py-1 rounded-md text-white bg-cameo-700 hover:bg-cameo-600"
+        href="https://www.foodbooking.com/api/fb/_q_jndx">Order Now</a
+      >
+    </nav>
+  </div>
+</header>
+<style>
+  .sticky-animation {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+
+  @keyframes blur {
+    to {
+      @apply bg-stone-900;
+      backdrop-filter: blur(12px);
+    }
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import { orderUrl } from "~/constants";
+---
+
+<section class="bg-white">
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between py-12 md:py-20 px-4 max-w-6xl mx-auto gap-6"
+  >
+    <div>
+      <h2 class="text-3xl font-bold tracking-tighter md:text-4xl">
+        Order online
+      </h2>
+      <p class="text-stone-500 m mt-3 sm:mt-2 max-w-prose">
+        Order online for pickup or delivery through our partners at FoodBooking
+        and DoorDash.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 w-full sm:w-72">
+      <a
+        href={orderUrl}
+        class="font-medium border border-transparent text-center bg-amber-400 hover:bg-amber-300 text-amber-900 px-6 py-3 rounded-md transition-colors"
+      >
+        Order pickup
+      </a>
+      <a
+        href="https://www.doordash.com/store/casa-real-colchester-27477852/"
+        class="flex gap-2 items-center justify-center font-medium border border-amber-900 text-center text-amber-900 hover:bg-amber-900 hover:text-white px-6 py-3 rounded-md transition-colors"
+      >
+        <svg class="h-6 fill-current" viewBox="0 0 24 24"
+          ><path
+            d="M23.071 8.409a6.09 6.09 0 0 0-5.396-3.228H.584A.589.589 0 0 0 .17 6.184L3.894 9.93a1.752 1.752 0 0 0 1.242.516h12.049a1.554 1.554 0 1 1 .031 3.108H8.91a.589.589 0 0 0-.415 1.003l3.725 3.747a1.75 1.75 0 0 0 1.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"
+          ></path></svg
+        ><span>Order delivery</span>
+      </a>
+    </div>
+  </div>
+</section>

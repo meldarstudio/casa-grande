@@ -1,0 +1,71 @@
+---
+import { navLinks, socialLinks } from "~/constants";
+import { Image } from "astro:assets";
+import logoImg from "~/assets/logo.webp";
+---
+
+<footer class="bg-cameo-300 pt-12 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto max-w-6xl">
+    <Image
+      class="mx-auto w-36 h-auto"
+      src={logoImg}
+      densities={[1.5, 2]}
+      format="webp"
+      loading="lazy"
+      decoding="async"
+      alt=""
+    />
+    <div>
+      <h2 class="text-amber-900 font-semibold">Links</h2>
+      <ul class="flex flex-col gap-2 mt-3 text-stone-700">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a class="hover:underline underline-offset-2" href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            class="hover:underline underline-offset-2"
+            href="https://casarealvt.com/"
+          >
+            Casa Real
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-amber-900 font-semibold">Socials</h2>
+      <ul class="flex flex-col gap-2 mt-3 text-stone-700">
+        {
+          socialLinks.map((link) => (
+            <li>
+              <a class="hover:underline underline-offset-2" href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <address class="not-italic text-stone-700">
+      <h2 class="text-amber-900 font-semibold mb-3">Address</h2>
+      22 Merchants Row<br />
+      Williston, VT 05495<br />
+      <h2 class="text-amber-900 font-semibold mb-3 mt-6">Phone</h2>
+      +1 (802) 662-5632<br />
+      <h2 class="text-amber-900 font-semibold mb-3 mt-6">Opening hours</h2>
+      Sun - Thur: 11am - 10pm<br />
+      Fri - Sat: 11am - 10:30pm<br />
+    </address>
+  </div>
+  <p class="text-sm text-stone-700 py-6 max-w-6xl mx-auto">
+    Website built by <a
+      class="underline underline-offset-2 hover:text-amber-900"
+      href="https://www.kevinzunigacuellar.com/">@kevinzunigacuellar</a
+    >
+  </p>
+</footer>
