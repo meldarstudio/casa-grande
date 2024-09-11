@@ -6,7 +6,7 @@ export const orderUrl =
 export const defaultMeta = {
   title: "Casa Grande Mexican Restaurant",
   description:
-    "Savor the best Mexican food in Colchester, Vermont! From flavorful tacos to fresh guacamole, enjoy an unforgettable culinary experience at our renowned restaurant",
+    "Savor the best Mexican food in Williston, Vermont! From flavorful tacos to fresh guacamole, enjoy an unforgettable culinary experience at our renowned restaurant",
   ogImagePath: "og.png",
 };
 
