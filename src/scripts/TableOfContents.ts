@@ -18,7 +18,7 @@ const observe = () => {
   if (observer) observer.disconnect();
   observer = new IntersectionObserver(setCurrent);
   toObserve.forEach((section) => {
-    observer!.observe(section);
+    if (observer) observer.observe(section);
   });
 };
 

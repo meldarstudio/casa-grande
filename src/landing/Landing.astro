@@ -1,73 +1,35 @@
 ---
-import backgroundImage from "~/assets/comedor.webp";
-import { Image } from "astro:assets";
+import backgroundImage from "~/assets/hero.webp";
+import { Picture } from "astro:assets";
 import { orderUrl } from "~/constants";
 ---
 
 <section class="relative">
-  <h1 class="sr-only">Casa Real Mexican Restaurant</h1>
-  <Image
+  <h1 class="sr-only">Casa Grande Mexican Restaurant</h1>
+  <Picture
     class="w-full h-svh object-cover object-center"
     src={backgroundImage}
-    densities={[1.5, 2]}
-    format="webp"
+    width={backgroundImage.width / 2}
+    height={backgroundImage.height / 2}
+    formats={["webp", "avif"]}
     loading="eager"
     decoding="async"
-    alt="Restaurant with tables, chairs and bar"
+    alt="Casa Grande most popular dishes on a table"
   />
-  <div class="absolute w-full inset-0 bg-stone-900/65"></div>
-  <div class="absolute inset-0 flex flex-col justify-center items-center p-6">
-    <span class="text-cameo-100 text-base sm:text-lg italic">Welcome to</span>
-    <h2
-      class="text-4xl sm:text-6xl md:text-8xl font-bold text-cameo-300 text-center mt-3"
-    >
-      Casa Grande
-    </h2>
-    <p class="text-lg lg:text-xl text-stone-300 text-center mt-2">
-      Authentic Mexican Restaurant in Williston, VT
-    </p>
-    <div
-      class="flex flex-col sm:flex-row w-full justify-center items-center mt-6 gap-3 sm:gap-6"
-    >
+  <div class="absolute w-full inset-0 bg-gradient-to-b from-stone-900/40"></div>
+  <article class="absolute bottom-0 right-0 xl:bottom-8 w-fit bg-amber-400 p-4">
+    <div class="flex flex-col gap-2">
+      <p class="font-semibold text-lg sm:text-xl">Authentic Mexican Cuisine</p>
+      <p class="text-amber-900 max-w-prose mb-2">
+        Experience the vibrant flavors of Mexico with every bite. From sizzling
+        fajitas to handcrafted tacos, our dishes are a true taste of tradition.
+      </p>
       <a
         href={orderUrl}
         rel="noopener noreferrer"
-        class="w-full sm:w-fit px-6 p-2 text-lg text-center font-bold text-white bg-cameo-700 hover:bg-cameo-600 rounded-md transition-colors"
+        class="w-full sm:w-fit text-center px-4 p-2 font-semibold text-white bg-amber-700 hover:bg-amber-600 rounded-md transition-colors"
         >Order Now</a
       >
-      <a
-        href="https://maps.app.goo.gl/ZoBfCbpKFCik5eR1A"
-        rel="noopener noreferrer"
-        class="w-full sm:w-fit px-6 p-2 text-lg text-center font-bold text-amber-500 border-2 border-amber-500 hover:bg-amber-500 hover:text-white rounded-md transition-colors"
-        >Directions</a
-      >
     </div>
-  </div>
-  <article
-    class="absolute bottom-0 w-full z-10 bg-amber-400 p-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
-  >
-    <div>
-      <p class="font-bold sm:text-xl">Are you closer to Colchester, VT?</p>
-      <p class="text-amber-900 max-w-prose">
-        Visit our sister restaurant, Casa Real
-      </p>
-    </div>
-    <a
-      class="flex items-center gap-2 font-semibold hover:text-amber-900"
-      href="https://casarealvt.com/"
-      >Go to Casa Real <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-4 sm:size-5 inline-flex"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-      </svg>
-    </a>
   </article>
 </section>
