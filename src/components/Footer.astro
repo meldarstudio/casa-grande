@@ -41,10 +41,10 @@ import logoImg from "~/assets/logo.webp";
       <h2 class="text-amber-900 font-semibold">Socials</h2>
       <ul class="flex flex-col gap-2 mt-3 text-stone-700">
         {
-          socialLinks.map((link) => (
+          Object.entries(socialLinks).map(([name, href]) => (
             <li>
-              <a class="hover:underline underline-offset-2" href={link.href}>
-                {link.name}
+              <a class="hover:underline underline-offset-2" href={href}>
+                {name}
               </a>
             </li>
           ))

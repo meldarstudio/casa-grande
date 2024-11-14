@@ -2,7 +2,6 @@
 import { defaultMeta } from "~/constants";
 import Navigation from "~/components/Navigation.astro";
 import Footer from "~/components/Footer.astro";
-// import "@fontsource-variable/brygada-1918";
 
 interface Props {
   title?: string;
@@ -16,7 +15,7 @@ const ogImageURL = new URL(defaultMeta.ogImagePath, Astro.url.origin).href;
 ---
 
 <!doctype html>
-<html lang="en" class="w-full h-full">
+<html lang="en" class="w-full h-full scroll-pt-14">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />

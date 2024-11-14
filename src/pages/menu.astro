@@ -1,7 +1,8 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import MenuContainer from "~/components/MenuContainer.astro";
-import TableOfContents from "~/components/TableOfContents.astro";
+import MenuToc from "~/components/toc/MenuToc.astro";
+import Category from "~/components/Category.astro";
+import { categories } from "~/constants";
 ---
 
 <Layout
@@ -9,17 +10,16 @@ import TableOfContents from "~/components/TableOfContents.astro";
   description="Explore a diverse menu of authentic Mexican dishes, meticulously crafted with locally sourced, fresh ingredients. Discover the perfect blend of tradition and local flair, elevating your dining experience with every bite"
 >
   <div class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-3xl text-center pt-10 font-bold tracking-tight md:text-4xl">
-      Menu
-    </h1>
-    <p class="max-w-prose text-lg text-center pt-6 mx-auto text-stone-600">
+    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Menu</h1>
+    <p class="max-w-prose mt-4 text-stone-600">
       Explore a diverse menu of authentic Mexican dishes, meticulously crafted
       with locally sourced, fresh ingredients.
     </p>
-    <section class="flex md:gap-6 lg:gap-12 sticky top-1 pt-12">
-      <TableOfContents />
-      <MenuContainer />
-    </section>
+    <div class="flex flex-col gap-6 mt-6">
+      <MenuToc />
+      <div class="grid grid-cols-1 gap-6">
+        {categories.map((props) => <Category {...props} />)}
+      </div>
+    </div>
   </div>
 </Layout>
-<script src="../scripts/TableOfContents.ts"></script>

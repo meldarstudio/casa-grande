@@ -8,4 +8,7 @@ export default defineConfig({
   site: "https://www.casagrandevt.com",
   adapter: vercel(),
   integrations: [tailwind(), sitemap()],
+  experimental: {
+    contentLayer: true,
+  },
 });

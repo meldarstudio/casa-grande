@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionKey } from "astro:content";
+import { Picture } from "astro:assets";
+
+interface Props {
+  slug: CollectionKey;
+  title: string;
+}
+
+const { slug, title } = Astro.props;
+const collection = await getCollection(slug);
+---
+
+<section>
+  <h2 class="font-semibold text-2xl mb-4" id={slug}>{title}</h2>
+  <ul class="grid grid-cols-1 gap-4">
+    {
+      collection.map(({ data }) => (
+        <li class="pb-4 flex flex-col gap-1 border-b last:border-b-0">
+          {data.imgSrc && (
+            <Picture
+              src={data.imgSrc}
+              alt={data.description}
+              formats={["webp", "avif"]}
+              class="mb-2 aspect-square object-cover"
+            />
+          )}
+          <h3 class="font-semibold text-lg">{data.name}</h3>
+          {data.description && <p>{data.description}</p>}
+        </li>
+      ))
+    }
+  </ul>
+</section>

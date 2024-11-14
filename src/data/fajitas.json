@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Fajitas",
+    "slug": "fajitas",
+    "description": "All fajitas are grilled with protein of your preference, bell peppers, onions, and tomatoes. Served with a rice, beans, lettuce, sour cream, shredded cheese, pico de gallo, tomato, and three flour or corn tortillas",
+    "imgSrc": "/src/assets/menu/fajita.jpeg",
+    "price": {
+      "chicken": 1650,
+      "steak": 1750,
+      "mix": 1825,
+      "texana": 1950,
+      "special": 1999,
+      "hawaiana": 1699,
+      "shrimp": 1999,
+      "pork": 1925,
+      "del mar": 2099,
+      "veggies": 1499
+    }
+  }
+]

@@ -1,5 +1,5 @@
 ---
-import { orderUrl } from "~/constants";
+import { orderUrl, socialLinks } from "~/constants";
 ---
 
 <section class="bg-white px-4 py-12 md:py-20 xl:px-0">
@@ -23,7 +23,7 @@ import { orderUrl } from "~/constants";
         Order pickup
       </a>
       <a
-        href="https://www.doordash.com/store/casa-real-colchester-27477852/"
+        href={socialLinks.DoorDash}
         class="flex gap-2 items-center justify-center font-medium border border-amber-900 text-center text-amber-900 hover:bg-amber-900 hover:text-white px-6 py-3 rounded-md transition-colors"
       >
         <svg class="h-6 fill-current" viewBox="0 0 24 24"
