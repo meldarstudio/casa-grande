@@ -9,13 +9,15 @@ import { categories } from "~/constants";
   title="Menu | Casa Real Mexican Restaurant"
   description="Explore a diverse menu of authentic Mexican dishes, meticulously crafted with locally sourced, fresh ingredients. Discover the perfect blend of tradition and local flair, elevating your dining experience with every bite"
 >
-  <div class="max-w-6xl mx-auto px-4 py-10">
+  <div class="max-w-6xl lg:mx-auto px-4 xl:px-0 py-10">
     <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Menu</h1>
-    <p class="max-w-prose mt-4 text-stone-600">
+    <p class="max-w-prose leading-relaxed mt-4 text-stone-600">
       Explore a diverse menu of authentic Mexican dishes, meticulously crafted
       with locally sourced, fresh ingredients.
     </p>
-    <div class="flex flex-col gap-6 mt-6">
+    <div
+      class="flex flex-col md:flex-row gap-6 mt-6 lg:gap-12 md:justify-between"
+    >
       <MenuToc />
       <div class="grid grid-cols-1 gap-6">
         {categories.map((props) => <Category {...props} />)}

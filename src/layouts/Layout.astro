@@ -15,7 +15,7 @@ const ogImageURL = new URL(defaultMeta.ogImagePath, Astro.url.origin).href;
 ---
 
 <!doctype html>
-<html lang="en" class="w-full h-full scroll-pt-14">
+<html lang="en" class="w-full h-full scroll-smooth scroll-pt-14 md:scroll-pt-4">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -43,7 +43,7 @@ const ogImageURL = new URL(defaultMeta.ogImagePath, Astro.url.origin).href;
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content="alt_description" />
   </head>
-  <body class="w-full h-full relative bg-stone-100">
+  <body class="w-full h-full relative bg-stone-100 antialiased">
     <Navigation />
     <main>
       <slot />
