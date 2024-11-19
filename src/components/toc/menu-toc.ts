@@ -45,7 +45,7 @@ export class MenuTOC extends HTMLElement {
     const observe = () => {
       if (observer) return;
       observer = new IntersectionObserver(setCurrent, {
-        rootMargin: "-50px 0px -50% 0px",
+        rootMargin: "-50px 0px -40% 0px",
       });
       // eslint-disable-next-line
       targets.forEach((h) => observer!.observe(h));
