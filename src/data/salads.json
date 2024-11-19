@@ -3,6 +3,7 @@
     "name": "Casa real salad",
     "slug": "casa-real-salad",
     "description": "Grilled chicken, steak, or shrimp, served on a bed of lettuce with tomatoes, shredded cheese, and slices of avocado",
+    "imgSrc": "/src/assets/menu/salad.webp",
     "price": {
       "chicken": 1175,
       "steak": 1299,

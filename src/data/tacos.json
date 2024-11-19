@@ -39,7 +39,7 @@
     "name": "Tacos de birria",
     "slug": "tacos-de-birria",
     "description": "Three soft corn tortillas filled with birria-style cooked beef. Served with a side of broth (consomé) for dipping, cilantro, onions, lime, and homemade spicy sauce on the side",
-    "imgSrc": "/src/assets/menu/birria_tacos.jpeg",
+    "imgSrc": "/src/assets/menu/tacos_de_birria.webp",
     "price": 1499
   }
 ]

@@ -9,6 +9,7 @@
     "name": "Quesadillas de fajita",
     "slug": "quesadillas-de-fajita",
     "description": "Grilled quesadilla filled with your choice of meat, bell peppers, onions, tomatoes, and cheese, covered with cheese sauce. Served with lettuce, sour cream, tomato, refried beans, and rice",
+    "imgSrc": "/src/assets/menu/quesadilla_fajita.webp",
     "price": {
       "chicken": 1450,
       "steak": 1575,

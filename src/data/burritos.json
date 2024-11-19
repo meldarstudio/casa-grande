@@ -39,6 +39,7 @@
     "name": "Burrito casa real",
     "slug": "burrito-casa-real",
     "description": "Extra large flour tortilla stuffed with your choice of meat, black beans, rice, lettuce, sour cream, fresh jalapeños, and pico de gallo. Covered with melted cheese, red and green sauce",
+    "imgSrc": "/src/assets/popular/burritos.webp",
     "price": {
       "veggies": 1525,
       "chicken": 1499,

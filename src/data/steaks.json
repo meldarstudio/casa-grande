@@ -21,6 +21,7 @@
     "name": "Steak oaxaca",
     "slug": "steak-oaxaca",
     "description": "Ribeye steak cooked with bacon, poblano peppers, and cheese on top. Served with a side of rice, beans, lettuce, sour cream, tomato, and three flour or corn tortillas",
+    "imgSrc": "/src/assets/menu/steak_oaxaca.webp",
     "price": 1899
   },
   {
