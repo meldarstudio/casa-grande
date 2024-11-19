@@ -21,7 +21,6 @@
     "name": "Pollo maya",
     "slug": "pollo-maya",
     "description": "Grilled chicken breast covered with a special mix of broccoli, cauliflower, and zucchini. Served with rice, lettuce, tomatoes, sour cream, and three flour or corn tortillas",
-    "imgSrc": "/src/assets/menu/pollo_maya.jpeg",
     "price": 1599
   },
   {

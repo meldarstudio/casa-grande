@@ -22,7 +22,9 @@ const collection = await getCollection(slug);
               src={data.imgSrc}
               alt={data.description}
               formats={["webp", "avif"]}
-              class="mb-2 aspect-square object-cover md:m-0 md:h-full md:max-w-40 lg:max-w-48 md:aspect-[6/5]"
+              class="mb-2 object-cover md:m-0 md:h-full md:max-w-40 lg:max-w-56"
+              width={data.imgSrc.width / 3}
+              height={data.imgSrc.height / 3}
             />
           )}
           <div class="flex max-w-prose flex-col justify-center leading-relaxed md:order-first md:p-4">
