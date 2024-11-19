@@ -9,6 +9,7 @@ export class MenuTOC extends HTMLElement {
     if (this.#current) this.#current.removeAttribute("aria-current");
     link.setAttribute("aria-current", "true");
     this.#current = link;
+    this.scrollNavIntoView();
   }
 
   private onIdle = (cb: IdleRequestCallback) =>
@@ -35,7 +36,6 @@ export class MenuTOC extends HTMLElement {
         );
         if (link) {
           this.current = link;
-          this.scrollNavIntoView();
           break;
         }
       }
@@ -44,7 +44,9 @@ export class MenuTOC extends HTMLElement {
     let observer: IntersectionObserver | undefined;
     const observe = () => {
       if (observer) return;
-      observer = new IntersectionObserver(setCurrent);
+      observer = new IntersectionObserver(setCurrent, {
+        rootMargin: "-50px 0px -50% 0px",
+      });
       // eslint-disable-next-line
       targets.forEach((h) => observer!.observe(h));
     };
