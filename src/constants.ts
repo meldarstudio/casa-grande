@@ -27,39 +27,6 @@ export const navLinks = [
   },
 ];
 
-export const popularDishes = [
-  {
-    title: "Fajitas",
-    href: "/menu#fajitas",
-    description:
-      "Grilled with bell peppers, onions, and tomatoes. Served with rice, beans, lettuce, sour cream, shredded cheese, pico de gallo, tomato, and three flour or corn tortillas",
-    img: {
-      src: "/src/assets/popular/fajitas.webp",
-      alt: "fajitas on a sizzling plate",
-    },
-  },
-  {
-    title: "Desserts",
-    href: "/menu#desserts",
-    description:
-      "A mix of all of our desserts! Can't decide which to order? This ones for you!",
-    img: {
-      src: "/src/assets/popular/sopapilla.jpeg",
-      alt: "sopapilla",
-    },
-  },
-  {
-    title: "Enchiladas",
-    href: "/menu#enchiladas",
-    description:
-      "Three chicken enchiladas topped with cheese, your choice of green or red sauce, lettuce, sour cream, tomatoes. Served with a side of Spanish rice",
-    img: {
-      src: "/src/assets/popular/enchiladas.webp",
-      alt: "two enchiladas in a plate",
-    },
-  },
-];
-
 export const categories: {
   title: string;
   slug: CollectionKey;
