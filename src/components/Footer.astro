@@ -4,24 +4,24 @@ import { Image } from "astro:assets";
 import logoImg from "~/assets/logo.webp";
 ---
 
-<footer class="bg-cameo-300 pt-12 px-4">
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto max-w-6xl">
+<footer class="bg-cameo-300 px-4 pt-12">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-4">
     <Image
-      class="mx-auto w-36 h-auto"
+      class="mx-auto h-auto w-36"
       src={logoImg}
       densities={[1.5, 2]}
       format="webp"
       loading="lazy"
       decoding="async"
-      alt=""
+      alt="Restaurant logo"
     />
     <div>
-      <h2 class="text-amber-900 font-semibold">Links</h2>
-      <ul class="flex flex-col gap-2 mt-3 text-stone-700">
+      <h2 class="font-semibold text-amber-900">Links</h2>
+      <ul class="mt-3 flex flex-col gap-2 text-stone-700">
         {
           navLinks.map((link) => (
             <li>
-              <a class="hover:underline underline-offset-2" href={link.href}>
+              <a class="underline-offset-2 hover:underline" href={link.href}>
                 {link.name}
               </a>
             </li>
@@ -29,7 +29,7 @@ import logoImg from "~/assets/logo.webp";
         }
         <li>
           <a
-            class="hover:underline underline-offset-2"
+            class="underline-offset-2 hover:underline"
             href="https://casarealvt.com/"
           >
             Casa Real
@@ -38,13 +38,13 @@ import logoImg from "~/assets/logo.webp";
       </ul>
     </div>
     <div>
-      <h2 class="text-amber-900 font-semibold">Socials</h2>
-      <ul class="flex flex-col gap-2 mt-3 text-stone-700">
+      <h2 class="font-semibold text-amber-900">Socials</h2>
+      <ul class="mt-3 flex flex-col gap-2 text-stone-700">
         {
-          socialLinks.map((link) => (
+          Object.entries(socialLinks).map(([name, href]) => (
             <li>
-              <a class="hover:underline underline-offset-2" href={link.href}>
-                {link.name}
+              <a class="underline-offset-2 hover:underline" href={href}>
+                {name}
               </a>
             </li>
           ))
@@ -52,17 +52,17 @@ import logoImg from "~/assets/logo.webp";
       </ul>
     </div>
     <address class="not-italic text-stone-700">
-      <h2 class="text-amber-900 font-semibold mb-3">Address</h2>
+      <h2 class="mb-3 font-semibold text-amber-900">Address</h2>
       22 Merchants Row<br />
       Williston, VT 05495<br />
-      <h2 class="text-amber-900 font-semibold mb-3 mt-6">Phone</h2>
+      <h2 class="mb-3 mt-6 font-semibold text-amber-900">Phone</h2>
       +1 (802) 662-5632<br />
-      <h2 class="text-amber-900 font-semibold mb-3 mt-6">Opening hours</h2>
+      <h2 class="mb-3 mt-6 font-semibold text-amber-900">Opening hours</h2>
       Sun - Thur: 11am - 10pm<br />
       Fri - Sat: 11am - 10:30pm<br />
     </address>
   </div>
-  <p class="text-sm text-stone-700 py-6 max-w-6xl mx-auto">
+  <p class="mx-auto max-w-6xl py-6 text-xs text-stone-700">
     Website built by <a
       class="underline underline-offset-2 hover:text-amber-900"
       href="https://www.kevinzunigacuellar.com/">@kevinzunigacuellar</a

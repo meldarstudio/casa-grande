@@ -8,4 +8,4 @@ Created by [Kevin Zuniga](https://www.kevinzunigacuellar.com/)
 
 ## Credits
 
-- Design Feedback: [BlurSoul](https://www.behance.net/BlurSoul_)
+- Design: [BlurSoul](https://www.behance.net/BlurSoul_)

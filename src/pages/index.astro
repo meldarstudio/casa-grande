@@ -1,13 +1,15 @@
 ---
-import Landing from "~/landing/Landing.astro";
+import Landing from "~/components/landing/Landing.astro";
 import Layout from "~/layouts/Layout.astro";
-import Popular from "~/landing/Popular.astro";
-import FindUs from "~/landing/FindUs.astro";
-import Order from "~/landing/Order.astro";
+import Popular from "~/components/landing/Popular.astro";
+import FindUs from "~/components/landing/FindUs.astro";
+import Order from "~/components/landing/Order.astro";
+import Gallery from "~/components/landing/Gallery.astro";
 ---
 
 <Layout>
   <Landing />
+  <Gallery />
   <Popular />
   <FindUs />
   <Order />
