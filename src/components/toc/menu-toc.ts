@@ -1,15 +1,14 @@
 export class MenuTOC extends HTMLElement {
-  private _current = this.querySelector<HTMLAnchorElement>(
-    'a[aria-current="true"]',
-  );
+  #current = this.querySelector<HTMLAnchorElement>('a[aria-current="true"]');
 
-  private _nav = this.querySelector<HTMLUListElement>(".scroll-container");
+  private readonly _nav =
+    this.querySelector<HTMLUListElement>(".scroll-container");
 
   protected set current(link: HTMLAnchorElement) {
-    if (link === this._current) return;
-    if (this._current) this._current.removeAttribute("aria-current");
+    if (link === this.#current) return;
+    if (this.#current) this.#current.removeAttribute("aria-current");
     link.setAttribute("aria-current", "true");
-    this._current = link;
+    this.#current = link;
   }
 
   private onIdle = (cb: IdleRequestCallback) =>
@@ -22,63 +21,36 @@ export class MenuTOC extends HTMLElement {
 
   private init = (): void => {
     /** All the links in the table of contents. */
-    const links = [...this.querySelectorAll("a")];
-
-    /** Test if an element is a table-of-contents heading. */
-    const isHeading = (el: Element): el is HTMLHeadingElement => {
-      return el instanceof HTMLHeadingElement;
-    };
-
-    /** Walk up the DOM to find the nearest heading. */
-    const getElementHeading = (
-      el: Element | null,
-    ): HTMLHeadingElement | null => {
-      if (!el) return null;
-      const origin = el;
-      while (el) {
-        if (isHeading(el)) return el;
-        // Assign the previous sibling’s last, most deeply nested child to el.
-        el = el.previousElementSibling;
-        while (el?.lastElementChild) {
-          el = el.lastElementChild;
-        }
-        // Look for headings amongst siblings.
-        const h = getElementHeading(el);
-        if (h) return h;
-      }
-      // Walk back up the parent.
-      return getElementHeading(origin.parentElement);
-    };
+    const links = Array.from(this.querySelectorAll<HTMLAnchorElement>("a"));
+    /** All the headings in the main content. */
+    const targets =
+      document.querySelectorAll<HTMLHeadingElement>("main section[id]");
 
     /** Handle intersections and set the current link to the heading for the current intersection. */
     const setCurrent: IntersectionObserverCallback = (entries) => {
       for (const { isIntersecting, target } of entries) {
         if (!isIntersecting) continue;
-        const heading = getElementHeading(target);
-        if (!heading) continue;
         const link = links.find(
-          (link) => link.hash === "#" + encodeURIComponent(heading.id),
+          (link) => link.hash === "#" + encodeURIComponent(target.id),
         );
         if (link) {
           this.current = link;
+          this.scrollNavIntoView();
           break;
         }
       }
     };
-
-    const toObserve = document.querySelectorAll("main [id]");
 
     let observer: IntersectionObserver | undefined;
     const observe = () => {
       if (observer) return;
       observer = new IntersectionObserver(setCurrent);
       // eslint-disable-next-line
-      toObserve.forEach((h) => observer!.observe(h));
+      targets.forEach((h) => observer!.observe(h));
     };
     observe();
 
     let resizeTimeout: NodeJS.Timeout;
-    let scrollTimeout: NodeJS.Timeout;
 
     window.addEventListener("resize", () => {
       // Disable intersection observer while window is resizing.
@@ -90,45 +62,43 @@ export class MenuTOC extends HTMLElement {
       resizeTimeout = setTimeout(() => this.onIdle(observe), 200);
     });
 
-    window.addEventListener("scroll", () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        // eslint-disable-next-line
-        const itemRect = this._current?.getBoundingClientRect()!;
-        // eslint-disable-next-line
-        const containerRect = this._nav?.getBoundingClientRect()!;
-
-        const isOutOfView =
-          itemRect.left < containerRect.left ||
-          itemRect.right > containerRect.right;
-
-        if (isOutOfView) {
-          this._current?.scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-          });
-        }
-      }, 150);
-    });
-
-    this._nav?.addEventListener("scroll", () => {
-      this.updateFade();
-    });
+    if (this._nav)
+      this._nav.addEventListener("scroll", () => this.updateFade());
     this.updateFade();
   };
 
   updateFade() {
     if (!this._nav) return;
 
-    const containerWidth = this._nav.offsetWidth;
-    const scrollWidth = this._nav.scrollWidth;
-    const scrollLeft = this._nav.scrollLeft;
+    const { offsetWidth: containerWidth, scrollWidth, scrollLeft } = this._nav;
 
-    this._nav.style.setProperty("--fade-left", scrollLeft > 0 ? "1" : "0");
-    this._nav.style.setProperty(
-      "--fade-right",
-      scrollLeft + containerWidth < scrollWidth ? "1" : "0",
-    );
+    // Calculate fade states
+    const showLeftFade = scrollLeft > 0;
+    const showRightFade = Math.ceil(scrollLeft + containerWidth) < scrollWidth;
+
+    requestAnimationFrame(() => {
+      if (!this._nav) return;
+      this._nav.style.setProperty("--fade-left", showLeftFade ? "1" : "0");
+      this._nav.style.setProperty("--fade-right", showRightFade ? "1" : "0");
+    });
+  }
+
+  scrollNavIntoView() {
+    if (!this.#current || !this._nav) return;
+
+    const itemRect = this.#current.getBoundingClientRect();
+    const containerRect = this._nav.getBoundingClientRect();
+
+    const isOutOfView =
+      itemRect.left < containerRect.left ||
+      itemRect.right > containerRect.right;
+
+    if (isOutOfView) {
+      this._nav.scrollBy({
+        left: itemRect.left - containerRect.left - 20,
+        behavior: "smooth",
+      });
+    }
   }
 }
 

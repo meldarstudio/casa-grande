@@ -11,7 +11,7 @@ const { slug, title } = Astro.props;
 const collection = await getCollection(slug);
 ---
 
-<section>
+<section id={slug}>
   <h2 class="font-semibold text-2xl mb-4" id={slug}>{title}</h2>
   <ul class="grid grid-cols-1 gap-4">
     {
@@ -22,12 +22,12 @@ const collection = await getCollection(slug);
               src={data.imgSrc}
               alt={data.description}
               formats={["webp", "avif"]}
-              class="mb-2 aspect-square object-cover md:m-0 md:max-w-48 md:h-full"
+              class="mb-2 aspect-square object-cover md:m-0 md:max-w-40 lg:max-w-48 md:h-full"
             />
           )}
           <div class="md:p-4 md:order-first flex flex-col justify-center max-w-prose leading-relaxed">
             <h3 class="font-semibold text-lg mb-1">{data.name}</h3>
-            <p>{data.description}</p>
+            <p class="text-zinc-600">{data.description}</p>
           </div>
         </li>
       ))
