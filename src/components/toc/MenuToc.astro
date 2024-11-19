@@ -2,15 +2,15 @@
 import { categories } from "~/constants";
 ---
 
-<menu-toc class="sticky top-0 md:top-4 h-fit bg-zinc-100">
+<menu-toc class="sticky top-0 h-fit bg-zinc-100 md:top-4">
   <ul
-    class="flex md:flex-col text-stone-600 overflow-scroll scroll-container md:w-40 lg:w-56 h-full"
+    class="scroll-container flex h-full overflow-scroll text-stone-600 md:w-40 md:flex-col lg:w-56"
   >
     {
       categories.map((category) => (
         <li class="">
           <a
-            class="block whitespace-nowrap font-medium border-b aria-[current]:border-amber-400 aria-[current]:bg-amber-400 aria-[current]:text-amber-950 p-3 md:px-2 md:py-1 md:border-0"
+            class="block whitespace-nowrap border-b p-3 font-medium aria-[current]:border-amber-400 aria-[current]:bg-amber-400 aria-[current]:text-amber-950 md:border-0 md:px-2 md:py-1"
             href={"#" + category.slug}
           >
             {category.title}

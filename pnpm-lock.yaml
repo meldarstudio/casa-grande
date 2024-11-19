@@ -20,9 +20,6 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.8.2
         version: 7.8.2(astro@4.16.7(rollup@4.24.2)(typescript@5.6.3))
-      '@fontsource-variable/brygada-1918':
-        specifier: ^5.1.1
-        version: 5.1.1
       '@vercel/speed-insights':
         specifier: ^1.0.14
         version: 1.0.14
@@ -32,6 +29,9 @@ importers:
       photoswipe:
         specifier: ^5.4.4
         version: 5.4.4
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.8
+        version: 0.6.8(prettier-plugin-astro@0.14.1)(prettier@3.3.3)
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -404,9 +404,6 @@ packages:
   '@eslint/plugin-kit@0.2.2':
     resolution: {integrity: sha512-CXtq5nR4Su+2I47WPOlWud98Y5Lv8Kyxp2ukhgFx/eW6Blm18VXJO5WuQylPugRo8nbluoi6GvvxBLqHcvqUUw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@fontsource-variable/brygada-1918@5.1.1':
-    resolution: {integrity: sha512-r9FcR3dJy4Yg7UGVXDWdt4oGDnrblydgaN+7Y3tDHbar6KgayQF1xEl9korEn4MVDM9cQbi2ACYJvVvYKCGM6w==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2118,6 +2115,61 @@ packages:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
     engines: {node: ^14.15.0 || >=16.0.0}
 
+  prettier-plugin-tailwindcss@0.6.8:
+    resolution: {integrity: sha512-dGu3kdm7SXPkiW4nzeWKCl3uoImdd5CTZEJGxyypEPL37Wj0HT2pLqjrvSei1nTeuQfO4PUfjeW5cTUNRLZ4sA==}
+    engines: {node: '>=14.21.3'}
+    peerDependencies:
+      '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-pug': '*'
+      '@shopify/prettier-plugin-liquid': '*'
+      '@trivago/prettier-plugin-sort-imports': '*'
+      '@zackad/prettier-plugin-twig-melody': '*'
+      prettier: ^3.0
+      prettier-plugin-astro: '*'
+      prettier-plugin-css-order: '*'
+      prettier-plugin-import-sort: '*'
+      prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
+      prettier-plugin-organize-attributes: '*'
+      prettier-plugin-organize-imports: '*'
+      prettier-plugin-sort-imports: '*'
+      prettier-plugin-style-order: '*'
+      prettier-plugin-svelte: '*'
+    peerDependenciesMeta:
+      '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-pug':
+        optional: true
+      '@shopify/prettier-plugin-liquid':
+        optional: true
+      '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      '@zackad/prettier-plugin-twig-melody':
+        optional: true
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-css-order:
+        optional: true
+      prettier-plugin-import-sort:
+        optional: true
+      prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
+        optional: true
+      prettier-plugin-multiline-arrays:
+        optional: true
+      prettier-plugin-organize-attributes:
+        optional: true
+      prettier-plugin-organize-imports:
+        optional: true
+      prettier-plugin-sort-imports:
+        optional: true
+      prettier-plugin-style-order:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+
   prettier@2.8.7:
     resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
@@ -3168,8 +3220,6 @@ snapshots:
   '@eslint/plugin-kit@0.2.2':
     dependencies:
       levn: 0.4.1
-
-  '@fontsource-variable/brygada-1918@5.1.1': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -5134,6 +5184,12 @@ snapshots:
       '@astrojs/compiler': 2.10.3
       prettier: 3.3.3
       sass-formatter: 0.7.9
+
+  prettier-plugin-tailwindcss@0.6.8(prettier-plugin-astro@0.14.1)(prettier@3.3.3):
+    dependencies:
+      prettier: 3.3.3
+    optionalDependencies:
+      prettier-plugin-astro: 0.14.1
 
   prettier@2.8.7:
     optional: true

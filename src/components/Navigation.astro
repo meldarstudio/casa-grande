@@ -3,21 +3,21 @@ import { navLinks } from "~/constants";
 ---
 
 <header
-  class="w-full z-20 text-white fixed top-0 sticky-animation py-6 px-4 xl:px-0"
+  class="sticky-animation fixed top-0 z-20 w-full px-4 py-6 text-white xl:px-0"
   class:list={{
     "relative bg-stone-900": Astro.url.pathname !== "/",
   }}
 >
-  <div class="flex items-center justify-between max-w-6xl mx-auto">
+  <div class="mx-auto flex max-w-6xl items-center justify-between">
     <a href="/" class="flex flex-col items-center"
-      ><span class="text-2xl sm:text-7xl font-serif">Casa Grande</span>
+      ><span class="font-serif text-2xl sm:text-7xl">Casa Grande</span>
       <span
-        class="uppercase tracking-wider text-xs font-serif sm:text-base px-1 bg-amber-400 w-full text-center text-stone-900"
+        class="w-full bg-amber-400 px-1 text-center font-serif text-xs uppercase tracking-wider text-stone-900 sm:text-base"
         >Mexican Restaurant</span
       ></a
     >
     <nav
-      class="flex flex-col gap-0.5 items-end uppercase tracking-wide text-sm sm:text-base"
+      class="flex flex-col items-end gap-0.5 text-sm uppercase tracking-wide sm:text-base"
     >
       {
         navLinks.map((link) => (
@@ -28,7 +28,7 @@ import { navLinks } from "~/constants";
       }
       <a
         href="https://www.foodbooking.com/api/fb/_q_jndx"
-        class="bg-amber-600 px-1 hover:underline rounded">Order Now</a
+        class="rounded bg-amber-600 px-1 hover:underline">Order Now</a
       >
     </nav>
   </div>
