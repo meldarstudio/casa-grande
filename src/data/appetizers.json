@@ -33,8 +33,8 @@
     }
   },
   {
-    "name": "Quesadilla casa real",
-    "slug": "quesadilla-casa-real",
+    "name": "Quesadilla casa grande",
+    "slug": "quesadilla-casa-grande",
     "description": "Steak, chicken, chorizo (Mexican sausage), or vegetarian, topped with cheese in a grilled flour tortilla. Served with lettuce, pico de gallo, and sour cream",
     "price": {
       "chicken": 1275,
@@ -44,8 +44,8 @@
     }
   },
   {
-    "name": "Appetizer casa real",
-    "slug": "appetizer-casa-real",
+    "name": "Appetizer casa grande",
+    "slug": "appetizer-casa-grande",
     "description": "Samples of taquitos, tostadas, jalapeño poppers, and cheese quesadilla on a bed of lettuce. Served with sour cream and tomatoes",
     "price": 1325
   },

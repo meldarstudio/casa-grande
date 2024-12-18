@@ -1,7 +1,7 @@
 [
   {
-    "name": "Casa real salad",
-    "slug": "casa-real-salad",
+    "name": "Casa grande salad",
+    "slug": "casa-grande-salad",
     "description": "Grilled chicken, steak, or shrimp, served on a bed of lettuce with tomatoes, shredded cheese, and slices of avocado",
     "imgSrc": "/src/assets/menu/salad.webp",
     "price": {
@@ -11,8 +11,8 @@
     }
   },
   {
-    "name": "Casa real bowl",
-    "slug": "casa-real-bowl",
+    "name": "Casa grande bowl",
+    "slug": "casa-grande-bowl",
     "description": "Burrito bowl loaded with your choice of protein, black beans, rice, lettuce, sour cream, fresh jalapeños, pico de gallo and schredded cheese",
     "price": {
       "chicken": 1250,
