@@ -47,11 +47,11 @@ const popularDishes = [
       >Popular dishes</span
     >
     <h2
-      class="mt-2 text-pretty text-center text-3xl font-bold tracking-tighter text-white md:text-4xl"
+      class="mt-2 text-center text-3xl font-bold tracking-tighter text-pretty text-white md:text-4xl"
     >
       Our customer's favorites
     </h2>
-    <p class="mt-2 max-w-prose text-pretty text-center text-stone-300">
+    <p class="mt-2 max-w-prose text-center text-pretty text-stone-300">
       Discover the most popular dishes in our restaurant
     </p>
     <ul
@@ -59,12 +59,12 @@ const popularDishes = [
     >
       {
         popularDishes.map((dish) => (
-          <li class="relative overflow-hidden rounded ring-4 ring-transparent hover:ring-amber-400">
+          <li class="relative overflow-hidden rounded-md ring-4 ring-transparent hover:ring-amber-400">
             <a
               class="absolute inset-0 bg-gradient-to-b from-transparent to-stone-900 opacity-0 transition-all hover:opacity-100"
               href={dish.href}
             >
-              <span class="absolute left-2 top-2 bg-amber-400 px-2 py-1 text-sm font-medium">
+              <span class="absolute top-2 left-2 rounded-md bg-amber-400 px-2 py-1 text-sm font-medium">
                 {dish.title}
               </span>
               <p class="absolute bottom-2 left-2 p-2 text-white">

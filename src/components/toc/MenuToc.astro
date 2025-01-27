@@ -8,9 +8,9 @@ import { categories } from "~/constants";
   >
     {
       categories.map((category) => (
-        <li class="">
+        <li>
           <a
-            class="block whitespace-nowrap border-b p-3 font-medium aria-[current]:border-amber-400 aria-[current]:bg-amber-400 aria-[current]:text-amber-950 md:border-0 md:px-2 md:py-1"
+            class="block border-b border-b-stone-200 p-3 font-medium whitespace-nowrap aria-[current]:border-amber-400 aria-[current]:bg-amber-400 aria-[current]:text-amber-950 md:border-0 md:px-2 md:py-1"
             href={"#" + category.slug}
           >
             {category.title}
