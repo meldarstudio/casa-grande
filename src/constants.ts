@@ -14,6 +14,7 @@ export const defaultMeta = {
 
 export const socialLinks = {
   DoorDash: "https://www.doordash.com/store/casa-grande-williston-31013945/",
+  Facebook: "https://www.facebook.com/casa.grande.williston.vt",
 };
 
 export const navLinks = [
